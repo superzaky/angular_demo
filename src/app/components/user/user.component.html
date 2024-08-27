@@ -1,0 +1,16 @@
+<h2>User Registration</h2>
+<form (ngSubmit)="register()">
+  <input [(ngModel)]="user.username" name="username" placeholder="Username" />
+  <input [(ngModel)]="user.password" name="password" type="password" placeholder="Password" />
+  <button type="submit">Register</button>
+</form>
+
+<h2>User Login</h2>
+<form (ngSubmit)="login()">
+  <input [(ngModel)]="credentials.username" name="username" placeholder="Username" />
+  <input [(ngModel)]="credentials.password" name="password" type="password" placeholder="Password" />
+  <button type="submit">Login</button>
+</form>
+
+<button (click)="logout()">Logout</button>
+

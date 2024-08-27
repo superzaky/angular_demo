@@ -1,0 +1,7 @@
+<h2>Todo Detail</h2>
+<form (ngSubmit)="updateTodo()">
+  <input [(ngModel)]="todo.title" name="title" placeholder="Title" />
+  <input [(ngModel)]="todo.description" name="description" placeholder="Description" />
+  <button type="submit">Update</button>
+</form>
+
