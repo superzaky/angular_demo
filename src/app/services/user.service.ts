@@ -18,9 +18,13 @@ export class UserService {
     return this.http.post(`${this.apiUrl}/login`, credentials);
   }
 
+  // logout(): Observable<any> {
+  //   const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+  //   return this.http.post(`${this.apiUrl}/logout`, {}, { headers });
+  // }
+
   logout(): Observable<any> {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
-    return this.http.post(`${this.apiUrl}/logout`, {}, { headers });
+    return this.http.post(`${this.apiUrl}/logout`, {}, { withCredentials: true });
   }
 }
 

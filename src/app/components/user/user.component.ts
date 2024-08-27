@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports : [ FormsModule ],
+  imports: [FormsModule, CommonModule ],
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
@@ -34,5 +35,8 @@ export class UserComponent {
       console.log('User logged out:', response);
     });
   }
-}
 
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
+}
